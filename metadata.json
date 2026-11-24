@@ -1,0 +1,6 @@
+{
+  "name": "NAVS Senior High School – Official Portal & Digital Admissions",
+  "description": "Official institutional website, online admissions management system, application tracker, and role-based administration portal for NAVS Senior High School, Ghana.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
