@@ -1,10 +1,25 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
+import { motion, useReducedMotion } from 'motion/react';
 import { ChevronRight, GraduationCap, AlertTriangle, CheckCircle2, Clock, FileWarning, Info, XCircle } from 'lucide-react';
 import { apiUrl } from '../../services/api.js';
+import campusHero from '../../assets/images/hero_navs_campus_1795530807594.jpg';
+import scienceLab from '../../assets/images/science_lab_ghana_1795530806869.jpg';
+import schoolLibrary from '../../assets/images/school_library_study_1795530807696.jpg';
+import schoolathletics from '../../assets/images/sports_athletics_field_1795530808515.jpg';
+import assemblyHall from '../../assets/images/campus_assembly_hall_1795530808668.jpg';
+
+const bundledImagePaths = {
+  '/src/assets/images/hero_navs_campus_1795530807594.jpg': campusHero,
+  '/src/assets/images/science_lab_ghana_1795530806869.jpg': scienceLab,
+  '/src/assets/images/school_library_study_1795530807696.jpg': schoolLibrary,
+  '/src/assets/images/sports_athletics_field_1795530808515.jpg': schoolathletics,
+  '/src/assets/images/campus_assembly_hall_1795530808668.jpg': assemblyHall,
+};
 
 export function SafeImage({ src, alt, className = '', fallbackTitle }) {
   const [failed, setFailed] = useState(false);
+  const reduceMotion = useReducedMotion();
 
   if (!src || failed) {
     return (
@@ -21,15 +36,20 @@ export function SafeImage({ src, alt, className = '', fallbackTitle }) {
     );
   }
 
-  const resolvedSrc = src.startsWith('/media/') ? apiUrl(src) : src;
+  const resolvedSrc = bundledImagePaths[src] ?? (src.startsWith('/media/') ? apiUrl(src) : src);
 
   return (
-    <img
+    <motion.img
       src={resolvedSrc}
       alt={alt}
       referrerPolicy="no-referrer"
       onError={() => setFailed(true)}
       className={className}
+      initial={{ opacity: 0, y: reduceMotion ? 0 : 14, scale: reduceMotion ? 1 : 1.025 }}
+      whileInView={{ opacity: 1, y: 0, scale: 1 }}
+      whileHover={reduceMotion ? undefined : { scale: 1.035 }}
+      viewport={{ once: true, amount: 0.2 }}
+      transition={{ duration: reduceMotion ? 0.2 : 0.65, ease: [0.22, 1, 0.36, 1] }}
     />
   );
 }

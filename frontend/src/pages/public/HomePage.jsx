@@ -4,6 +4,11 @@ import { ArrowRight, BookOpen, Calendar, FileCheck2, MapPin, Microscope, ShieldC
 import { useSchool } from '../../context/SchoolContext.jsx';
 import { useDocumentTitle } from '../../hooks/useDocumentTitle.js';
 import { LoadingSkeleton, SafeImage } from '../../components/ui/Common.jsx';
+import heroCampus from "../../assets/images/hero_navs_campus_1795530807594.png";
+import scienceLab from "../../assets/images/science_lab_ghana_1795530806869.jpg"
+import schoolLibrary from "../../assets/images/school_library_study_1795530807696.jpg"
+import schoolathletics from "../../assets/images/sports_athletics_field_1795530808515.jpg"
+
 
 export default function HomePage() {
   useDocumentTitle(
@@ -68,7 +73,7 @@ const currentYear =
             <div className="lg:col-span-6">
               <div className="h-72 sm:h-96 lg:h-full min-h-[340px] rounded-lg overflow-hidden border border-white/15">
                 <SafeImage
-                  src="/src/assets/images/hero_navs_campus_1795530807594.png"
+                  src={heroCampus}
                   alt="NAVS Senior High School main academic courtyard and campus buildings"
                   className="w-full h-full object-cover"
                   fallbackTitle="NAVS Senior High School Campus"
@@ -221,7 +226,7 @@ const currentYear =
             <article className="border border-slate-200 rounded-lg overflow-hidden bg-[#FAF9F6]">
               <div className="aspect-[4/3] overflow-hidden">
                 <SafeImage
-                  src="/src/assets/images/science_lab_ghana_1795530806869.jpg"
+                  src={scienceLab}
                   alt="Students conducting practical experiments in the NAVS science laboratory"
                   className="w-full h-full object-cover"
                 />
@@ -241,7 +246,7 @@ const currentYear =
             <article className="border border-slate-200 rounded-lg overflow-hidden bg-[#FAF9F6]">
               <div className="aspect-[4/3] overflow-hidden">
                 <SafeImage
-                  src="/src/assets/images/school_library_study_1795530807696.jpg"
+                  src={schoolLibrary}
                   alt="NAVS Senior High School library and quiet study hall"
                   className="w-full h-full object-cover"
                 />
@@ -261,7 +266,7 @@ const currentYear =
             <article className="border border-slate-200 rounded-lg overflow-hidden bg-[#FAF9F6]">
               <div className="aspect-[4/3] overflow-hidden">
                 <SafeImage
-                  src="/src/assets/images/sports_athletics_field_1795530808515.jpg"
+                  src={schoolathletics}
                   alt="NAVS athletics track and outdoor sports pitch"
                   className="w-full h-full object-cover"
                 />
@@ -379,7 +384,7 @@ const currentYear =
                 <SafeImage
                   src={img.image_url}
                   alt={img.title}
-                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                  className="w-full h-full object-cover"
                 />
                 <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/80 via-black/35 to-transparent p-3">
                   <p className="text-xs font-medium text-white truncate">{img.title}</p>

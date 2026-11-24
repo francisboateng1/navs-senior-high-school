@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import { useSchool } from '../../context/SchoolContext.jsx';
 import { useDocumentTitle } from '../../hooks/useDocumentTitle.js';
 import { PageHeader, SafeImage } from '../../components/ui/Common.jsx';
+import assemblyHall from '../../assets/images/campus_assembly_hall_1795530808668.jpg';
 
 export default function AboutPage() {
   useDocumentTitle('About Us', 'School history, vision, mission, core values, leadership, and campus infrastructure.');
@@ -53,7 +54,7 @@ export default function AboutPage() {
           <div className="lg:col-span-6">
             <div className="aspect-[4/3] rounded-lg overflow-hidden border border-slate-200">
               <SafeImage
-                src="/src/assets/images/campus_assembly_hall_1795530808668.jpg"
+                src={assemblyHall}
                 alt="NAVS Senior High School assembly auditorium"
                 className="w-full h-full object-cover"
               />

@@ -2,6 +2,8 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { useDocumentTitle } from '../../hooks/useDocumentTitle.js';
 import { PageHeader, SafeImage } from '../../components/ui/Common.jsx';
+import schoolathletics from '../../assets/images/sports_athletics_field_1795530808515.jpg';
+import scienceLab from '../../assets/images/science_lab_ghana_1795530806869.jpg';
 
 export default function StudentLifePage() {
   useDocumentTitle('Student Life', 'Clubs, societies, athletics, cultural programmes, and student leadership at NAVS.');
@@ -48,14 +50,14 @@ export default function StudentLifePage() {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
           <div className="aspect-[4/3] rounded-lg overflow-hidden border border-slate-200">
             <SafeImage
-              src="/src/assets/images/sports_athletics_field_1795530808515.jpg"
+              src={schoolathletics}
               alt="NAVS athletics track and sports complex"
               className="w-full h-full object-cover"
             />
           </div>
           <div className="aspect-[4/3] rounded-lg overflow-hidden border border-slate-200">
             <SafeImage
-              src="/src/assets/images/science_lab_ghana_1795530806869.jpg"
+              src={scienceLab}
               alt="Students collaborating in the science laboratory"
               className="w-full h-full object-cover"
             />
